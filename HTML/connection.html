@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Production Viewer</title>
+<!--jQuery import-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="../js/constants.js"></script>
+<script src="../js/connection.js"></script>
+</head>
+<body>
+  <p>Connectez-vous à votre espace perso<br />
+
+  </p>
+  <p id="errorConnect" style="display:none">Erreur de connexion<br />
+
+  </p>
+  <form>
+    Mail :
+    <input type="mail" name="mail" id="mail" value="" ><br>
+    Password :
+    <input type="password" name="password" id="password" value="" >
+    <br><br>
+    <input type="button" value="Submit" onclick="connectUser()">
+</form>
+
+
+
+
+
+</body>
+</html>
