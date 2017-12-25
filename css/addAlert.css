@@ -1,0 +1,31 @@
+label
+{
+	display: block;
+	float: left;
+  width:150px;
+}
+
+input
+{
+	display: block;
+
+}
+
+
+#alertFull{
+  margin : 0 auto;
+  width : 60%;
+  border:solid;
+  text-align:center;
+  font: Arial;
+}
+
+#addButton{
+margin : 0 auto;
+}
+
+#alertForm{
+  margin : 0 auto;
+  width : 60%;
+  text-align:center;
+}

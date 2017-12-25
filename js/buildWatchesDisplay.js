@@ -32,23 +32,27 @@ function buildWatchLine(watch) {
 
   }
 
-  divRow.appendChild(addToggle())
+  divRow.appendChild(addToggle(watch['_id']["$oid"],watch['active']))
   return divRow
 
 };
 
-function addToggle(){
+function addToggle(id,status){
   var divInner = document.createElement('div');
   divInner.className="innerWatch";
   divInner.setAttribute("id","toggle");
 
   var labelToggle=document.createElement('label');
   labelToggle.className="switch";
+
   var inpToggle=document.createElement('input');
   inpToggle.type="checkbox";
-  inpToggle.checked=true;
+  inpToggle.checked=status;
+  inpToggle.onchange=function() {changeStatus(id)};
+
   var spanToggle=document.createElement('span');
   spanToggle.className="slider round";
+
 
   labelToggle.appendChild(inpToggle);
   labelToggle.appendChild(spanToggle);
@@ -75,4 +79,23 @@ function keyToLabel(key) {
     return 'Prix max'
   }
 
+};
+
+function changeStatus(id){
+  var xhr = new XMLHttpRequest();
+  url=urlApiRest+"userManagement/getWatches/changeStatusWatch"
+  xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    if (this.response=="False"){
+      window.location.href= "connection.html";
+    }   
+  }
+  };
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.withCredentials= true;
+  xhr.setRequestHeader("Access-Control-Allow-Credentials",true);
+  xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+  xhr.crossdomain=true;
+  xhr.send(JSON.stringify({id:id}));
 };

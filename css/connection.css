@@ -1,0 +1,50 @@
+
+body{
+  background-image:url("../image/train.jpg");
+}
+
+label
+{
+	display: block;
+	width: 80px;
+	float: left;
+}
+
+#connectionFull{
+  margin : 0 auto;
+  width : 30%;
+  border:solid;
+  text-align:center;
+  background-color:#6fa1f2;
+  font: Arial;
+}
+
+#getConnected{
+margin : 0 auto;
+}
+
+#connectionForm{
+  margin : 0 auto;
+  width : 60%;
+  text-align:center;
+}
+
+#bandeau{
+  margin-bottom:30px;
+  width : 100%;
+  text-align:center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color:#6fa1f2;
+  vertical-align: middle;
+  font-family: sans-serif;
+  font:Helvetica;
+
+}
+
+#welcome {
+  display: inline-block;
+  vertical-align: middle;
+}
